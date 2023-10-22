@@ -1,0 +1,234 @@
+@keyframes floating{
+	0%{top: 0;}
+	50%{top: 20px;}
+	100%{top: 0;}
+}
+@keyframes showtext{
+	0%{width: 0ch;}
+	75%{width: 17ch;}
+	100%{width: 17ch;}
+}
+@keyframes pop{
+	0%{top: 0px;}
+	5%{top: 40px;}
+	12%{top: 0px;}
+
+}
+*{
+	padding: 0;
+	margin: 0;
+}
+html, body{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+section, footer{
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: #234;
+	overflow: hidden hidden;
+}
+#main{
+	background-color: #234;
+	flex-flow: column wrap;
+	justify-content: space-around;
+}
+#photo{
+	display: block;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-color: #ddd;
+	background-image: url("perfil.jpg");
+	background-size: 200px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#main .text{
+	white-space: nowrap;
+	overflow: hidden;
+	animation: steps(17);
+	animation-name: showtext;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	border-right: 3px solid #ddd;
+}	
+.box{
+	position: relative;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	max-width: 40%;
+	padding: 10px;
+	background-color: rgb(0,0,0,0.2);
+	border-radius: 10px;
+	box-shadow: 10px 10px 0 rgb(0,0,0,0.5);
+}
+#main .box{
+	animation-name: pop;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+.box svg{
+	position: absolute;
+	margin: -35px 0;
+}
+.buttons, .buttons:before{
+	content: '';
+	position: relative;
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.buttons{
+	background-color: #956;
+}
+.buttons:before{
+	background-color: #aa0;
+	left: 20px;
+}
+.text{
+	font-family: Arial, sans-serif;
+	color: #ddd;
+	margin: 20px;
+	line-height: 25px;
+}
+.text h1{
+	color: fff;
+	margin: 0 0 20px 0;
+}
+.img{
+	position: relative;
+	display: block;
+	width: 30%;
+	height: 70%;
+	background-size: 100% 100%;
+	background-position: center;
+	animation-name: floating;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+#what .img{
+	background-image: url("myself.svg");
+}
+#history .img{
+	background-image: url("htmlcss.svg");
+}
+#examples:before{
+	content: '';
+	position: relative;
+	display: block;
+	left: -10px;
+	top: -10px;
+	width: 100%;
+	height: 100%;
+	background-color: #888;	
+}
+#menu, #redes a{
+	position: absolute;
+	left: calc(50% - 50px);
+	top: calc(50% - 50px);
+	display: block;
+	width: 100px;
+	height: 100px;
+	background-color: #456;
+	border-radius: 50%;
+	transition: 0.3s;
+	cursor: pointer;
+}
+#redes .box{
+	position: relative;
+	width: auto;
+	top: calc(50% - 15%);
+	transition: 0.3s;
+}
+#menu{
+	z-index: 1;
+}
+#menu:before{
+	content: '';
+	position: absolute;
+	top: calc(50% - 0.5px);
+	left: calc(50% - 12.5px);
+	display: block;
+	width: 0;
+	height: 1px;
+	background-color: #ddd;
+	transform: rotate(45deg);
+}
+#menu:after{
+	content: '';
+	position: absolute;
+	top: calc(50% - 0.5px);
+	left: calc(50% - 12.5px);
+	display: block;
+	width: 0;
+	height: 1px;
+	background-color: #ddd;	
+	transform: rotate(135deg);
+}
+#git, #insta, #linkedin, #codepen{
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 70px;
+}
+#menu.click{
+	scale: 2;
+	border-radius: 5px;
+	background-color: #777;
+	box-shadow: 0 0 10px #123;
+	z-index: 0;
+}
+#menu.click:before,#menu.click:after{
+	width: 25px;
+}
+#menu.click + #git{
+	left: calc(50% - 150px);
+	background-color: #333;
+	background-image: url("github.svg");
+}
+#menu.click + #git + #insta{
+	left: calc(50% + 50px);
+	background-color: #826;
+	background-image: url("instagram.svg");
+}
+#menu.click + #git + #insta + #linkedin {
+	top: calc(50% - 150px);
+	background-color: #259;
+	background-image: url("linkedin.svg");
+}
+#menu.click + #git + #insta + #linkedin + #codepen{
+	top: calc(50% + 50px);
+	background-color: #468;
+	background-image: url("codepen.svg");
+}
+#menu.click + #git + #insta + #linkedin + #codepen + .box{
+	top: calc(50% + 10%);
+}
+@media screen and (max-width: 750px){
+	section{
+		flex-flow: column wrap;
+	}
+	.box{
+		z-index: 1;
+		background-color: rgb(0,0,0,0.2);
+		backdrop-filter: blur(5px);
+	}
+	.img{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #234;
+		opacity: 0.1;
+		z-index: 0;
+	}
+}

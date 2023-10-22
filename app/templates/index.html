@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=width-device, initial-scale=1.0"> 
+	<link rel="shortcut icon" href="{{url_for('static',filename='logo.svg')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+	<title>PORT</title>
+</head>
+<body>
+	
+	<section id="main">
+		<div id="photo"></div>
+		<div class="box">
+			<svg width='25' height='25'>
+				<polygon points='0,25 12.5,0 25,25' fill='rgb(0,0,0,0.2)'/>
+			</svg>
+			<p class="text">Olá. Me chamo Vini.</p>
+		</div>
+	</section>
+	<section id='what'>
+		<div class='img'></div>
+		<div class="box">
+			<div class="buttons"></div>
+			<div class="text">
+				<h1>Quem sou?</h1>
+				<p>Sou um cara simples, moro em Recife/PE e estudo na ETE Porto Digital. Atualmente sou front e back-end e trabalho em alguns projetos (disponiveis no git).</p>
+			</div>
+		</div>
+	</section>
+	<section id="history">
+		<div class="box">
+			<div class="buttons"></div>
+			<div class="text">
+				<h1>Breve História</h1>
+				<p>Comecei a programar com 14 anos após ver um anúncio do Gustavo Guanabara. Depois disso segui em frente, aprendendo mais e mais.</p>
+			</div>
+		</div>
+		<div class='img'></div>
+	</section>
+	<section id="redes">
+		<div id="menu"></div>
+		<a id="git" href="https://github.com/gitviini" target="_blank"></a>
+		<a id="insta" href="https://instagram.com/v.ii.n.i" target="_blank"></a>
+		<a id='linkedin' href="https://www.linkedin.com/in/vinicius-gabriel-639869297/" target="_blank"></a>
+		<a id="codepen" href="https://codepen.io/gitviini" target="_blank"></a>
+		<div class="box">
+			<div class="text">
+				<p>Obrigado pela atenção, clique para mais.</p>
+			</div>
+		</div>
+	</section>
+	
+</body>
+<script type="text/javascript">
+	let menu = document.querySelector('#menu')
+	menu.addEventListener('click', ()=>{
+		menu.classList.toggle('click')
+	})
+</script>
+</html>
